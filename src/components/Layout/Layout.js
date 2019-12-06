@@ -1,5 +1,6 @@
 import React from 'react';
 import Position from "../Position/Position";
+import { Box } from 'grommet';
 
 const layout = (props) => {
     const positions = [
@@ -13,11 +14,14 @@ const layout = (props) => {
     ];
     
     return (
-        <div>
+        <Box 
+            direction="row"
+            pad="medium"
+            background="light-3">
             {positions.map(pos => (
                 <Position name={pos} key={pos} />
             ))}
-        </div>
+        </Box>
     )
 }
 

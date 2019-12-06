@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Player from '../Player/Player';
+import {Box} from 'grommet';
 
     function Position(props) {
         const [players, setPlayers] = useState([
@@ -60,7 +61,10 @@ import Player from '../Player/Player';
 
         
         return (
-        <div>
+        <Box 
+            width="small"
+            margin="xsmall"
+            border={{color: 'dark-2', size: 'small'}}>
             <h3>{props.name}</h3>
             <ul>
                 {players.filter(p => p.position === props.name)
@@ -76,7 +80,7 @@ import Player from '../Player/Player';
             </ul>
             <button onClick={addSlotHandler}>Add Slot</button>
 
-        </div>
+        </Box>
     )
 }
 
