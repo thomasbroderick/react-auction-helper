@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Player from '../Player/Player';
-import {Box} from 'grommet';
+import {Box, Text, Button} from 'grommet';
 
     function Position(props) {
         const [players, setPlayers] = useState([
@@ -64,9 +64,17 @@ import {Box} from 'grommet';
         <Box 
             width="small"
             margin="xsmall"
+            direction="column"
+            background="dark-3"
+            alignContent="start"
+            justify="between"
             border={{color: 'dark-2', size: 'small'}}>
-            <h3>{props.name}</h3>
-            <ul>
+            <Box 
+                background="neutral-4"
+                align="start">
+                <Text alignSelf="center">{props.name}</Text>
+            </Box>
+            <ul style={{padding: '0px'}}>
                 {players.filter(p => p.position === props.name)
                 .map(rp => (
                     <Player 
@@ -78,7 +86,11 @@ import {Box} from 'grommet';
                     delete={deletePlayerHandler} />
                 ))}
             </ul>
-            <button onClick={addSlotHandler}>Add Slot</button>
+            <Button 
+                onClick={addSlotHandler}
+                label="Add Slot"
+                primary="true"
+                color="neutral-1" />
 
         </Box>
     )

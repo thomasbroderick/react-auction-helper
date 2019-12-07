@@ -1,18 +1,26 @@
 import React from 'react';
+import { Box, Text } from 'grommet';
 
 function Player(props) {
     
     return(
-        <div>
-            <h3>
+        <Box 
+            round="xsmall"
+            alignSelf="start"
+            border={{color: 'dark-2', size: 'xsmall'}}
+            fill="horizontal"
+            background="light-2"
+            width="medium">
+            <Text 
+                alignSelf="center">
                 {props.name}
-            </h3>
+            </Text>
             <ul>
-                <li>Value: {props.value}</li>
-                <li>Price: {props.price}</li>
+                <li><Text size="small">Value: {props.value}</Text></li>
+                <li><Text size="small">Price: {props.price}</Text></li>
             </ul>
             <button onClick={(e) => props.delete(props.id, e)}>Delete</button>
-        </div>
+        </Box>
     )
 }
 
